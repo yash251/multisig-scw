@@ -6,7 +6,7 @@ import {BaseAccount} from "account-abstraction/core/BaseAccount.sol";
 import {UserOperation} from "account-abstraction/interfaces/UserOperation.sol";
 import {ECDSA} from "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 
-contract Wallet {
+contract Wallet is BaseAccount {
     address public immutable walletFactory;
     IEntryPoint private immutable _entryPoint;
 
