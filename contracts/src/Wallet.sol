@@ -14,4 +14,8 @@ contract Wallet is BaseAccount {
         _entryPoint = anEntryPoint;
         walletFactory = ourWalletFactory;
     }
+
+    function entryPoint() public view override returns (IEntryPoint) {
+        return _entryPoint;
+    }
 }
