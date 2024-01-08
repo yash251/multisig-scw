@@ -7,6 +7,10 @@ import {UserOperation} from "account-abstraction/interfaces/UserOperation.sol";
 import {ECDSA} from "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 
 contract Wallet is BaseAccount {
+
+    using ECDSA for bytes32;
+    address[] public owners;
+
     address public immutable walletFactory;
     IEntryPoint private immutable _entryPoint;
 
