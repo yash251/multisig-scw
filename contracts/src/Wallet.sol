@@ -5,8 +5,9 @@ import {IEntryPoint} from "account-abstraction/interfaces/IEntryPoint.sol";
 import {BaseAccount} from "account-abstraction/core/BaseAccount.sol";
 import {UserOperation} from "account-abstraction/interfaces/UserOperation.sol";
 import {ECDSA} from "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
+import {Initializable} from "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 
-contract Wallet is BaseAccount {
+contract Wallet is BaseAccount, Initializable {
 
     using ECDSA for bytes32;
     address[] public owners;
