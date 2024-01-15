@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.12;
 
-import {IEntryPoint} from "account-abstraction/interfaces/IEntryPoint.sol";
-import {BaseAccount} from "account-abstraction/core/BaseAccount.sol";
-import {UserOperation} from "account-abstraction/interfaces/UserOperation.sol";
+import {IEntryPoint} from "account-abstraction/contracts/interfaces/IEntryPoint.sol";
+import {BaseAccount} from "account-abstraction/contracts/core/BaseAccount.sol";
+import {UserOperation} from "account-abstraction/contracts/interfaces/UserOperation.sol";
 import {ECDSA} from "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 import {Initializable} from "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 
