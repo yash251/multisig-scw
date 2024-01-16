@@ -15,6 +15,8 @@ contract Wallet is BaseAccount, Initializable {
     address public immutable walletFactory;
     IEntryPoint private immutable _entryPoint;
 
+    event WalletInitialized(IEntryPoint indexed entryPoint, address[] owners);
+
     constructor(IEntryPoint anEntryPoint, address ourWalletFactory) {
         _entryPoint = anEntryPoint;
         walletFactory = ourWalletFactory;
