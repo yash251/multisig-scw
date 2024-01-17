@@ -47,4 +47,10 @@ contract Wallet is BaseAccount, Initializable {
         // If all signatures are valid (i.e., they all belong to the owners), return 0
         return 0;
     }
+
+    function _initialize(address[] memory initialOwners) internal {
+        require(initialOwners.length > 0, "no owners");
+        owners = initialOwners;
+        emit WalletInitialized(_entryPoint, initialOwners);
+    }
 }
