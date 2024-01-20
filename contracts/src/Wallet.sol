@@ -53,4 +53,15 @@ contract Wallet is BaseAccount, Initializable {
         owners = initialOwners;
         emit WalletInitialized(_entryPoint, initialOwners);
     }
+
+    function _call(address target, uint256 value, bytes memory data) internal {
+        (bool success, bytes memory result) = target.call{value: value}(data);
+        if (!success) {
+            assembly {
+                // The assembly code here skips the first 32 bytes of the result, which contains the length of data.
+                // It then loads the actual error message using mload and calls revert with this error message.
+                revert(add(result, 32), mload(result))
+            }
+        }
+    }
 }
