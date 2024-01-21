@@ -64,4 +64,12 @@ contract Wallet is BaseAccount, Initializable {
             }
         }
     }
+
+    modifier _requireFromEntryPointOrFactory() {
+        require(
+            msg.sender == address(_entryPoint) || msg.sender == walletFactory,
+            "only entry point or wallet factory can call"
+        );
+        _;
+    }
 }
