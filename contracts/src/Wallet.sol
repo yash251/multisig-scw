@@ -72,4 +72,12 @@ contract Wallet is BaseAccount, Initializable {
         );
         _;
     }
+
+    function execute(
+        address dest,
+        uint256 value,
+        bytes calldata func
+    ) external _requireFromEntryPointOrFactory {
+        _call(dest, value, func);
+    }
 }
