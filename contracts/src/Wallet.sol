@@ -80,4 +80,16 @@ contract Wallet is BaseAccount, Initializable {
     ) external _requireFromEntryPointOrFactory {
         _call(dest, value, func);
     }
+
+    function executeBatch(
+        address[] calldata dests,
+        uint256[] calldata values,
+        bytes[] calldata funcs
+    ) external _requireFromEntryPointOrFactory {
+        require(dests.length == funcs.length, "wrong dests lengths");
+        require(values.length == funcs.length, "wrong values lengths");
+        for (uint256 i = 0; i < dests.length; i++) {
+            _call(dests[i], values[i], funcs[i]);
+        }
+    }
 }
