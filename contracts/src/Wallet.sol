@@ -6,6 +6,9 @@ import {BaseAccount} from "account-abstraction/contracts/core/BaseAccount.sol";
 import {UserOperation} from "account-abstraction/contracts/interfaces/UserOperation.sol";
 import {ECDSA} from "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 import {Initializable} from "@openzeppelin/contracts/proxy/utils/Initializable.sol";
+// Other imports
+import {UUPSUpgradeable} from "@openzeppelin/contracts/proxy/utils/UUPSUpgradeable.sol";
+import {TokenCallbackHandler} from "account-abstraction/samples/callback/TokenCallbackHandler.sol";
 
 contract Wallet is BaseAccount, Initializable {
 
