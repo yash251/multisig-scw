@@ -10,8 +10,12 @@ import {Initializable} from "@openzeppelin/contracts/proxy/utils/Initializable.s
 import {UUPSUpgradeable} from "@openzeppelin/contracts/proxy/utils/UUPSUpgradeable.sol";
 import {TokenCallbackHandler} from "account-abstraction/samples/callback/TokenCallbackHandler.sol";
 
-contract Wallet is BaseAccount, Initializable {
-
+contract Wallet is
+    BaseAccount,
+    Initializable,
+    UUPSUpgradeable,
+    TokenCallbackHandler
+{
     using ECDSA for bytes32;
     address[] public owners;
 
