@@ -99,4 +99,9 @@ contract Wallet is
             _call(dests[i], values[i], funcs[i]);
         }
     }
+
+    function _authorizeUpgrade(
+        address
+    ) internal view override _requireFromEntryPointOrFactory {}
+
 }
