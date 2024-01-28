@@ -104,4 +104,10 @@ contract Wallet is
         address
     ) internal view override _requireFromEntryPointOrFactory {}
 
+    function encodeSignatures(
+        bytes[] memory signatures
+    ) public pure returns (bytes memory) {
+        return abi.encode(signatures);
+    }
+
 }
