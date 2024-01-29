@@ -110,4 +110,8 @@ contract Wallet is
         return abi.encode(signatures);
     }
 
+    function getDeposit() public view returns (uint256) {
+        return entryPoint().balanceOf(address(this));
+    }
+
 }
