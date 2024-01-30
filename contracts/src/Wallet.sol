@@ -114,4 +114,8 @@ contract Wallet is
         return entryPoint().balanceOf(address(this));
     }
 
+    function addDeposit() public payable {
+        entryPoint().depositTo{value: msg.value}(address(this));
+    }
+
 }
