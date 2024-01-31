@@ -118,4 +118,6 @@ contract Wallet is
         entryPoint().depositTo{value: msg.value}(address(this));
     }
 
+    receive() external payable {}
+
 }
