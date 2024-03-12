@@ -6,3 +6,14 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Wallet {
+  id Int @id @default(autoincrement())
+
+  address    String   @unique
+  signers    String[] @default([])
+  isDeployed Boolean  @default(false)
+
+  salt         String
+  transactions Transaction[]
+}
