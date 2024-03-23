@@ -16,3 +16,9 @@ export const entryPointContract = new Contract(
   ENTRY_POINT_ABI,
   provider
 );
+
+export const walletFactoryContract = new Contract(
+  WALLET_FACTORY_ADDRESS,
+  WALLET_FACTORY_ABI,
+  provider
+);
