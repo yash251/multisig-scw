@@ -22,3 +22,7 @@ export const walletFactoryContract = new Contract(
   WALLET_FACTORY_ABI,
   provider
 );
+
+export const getWalletContract = (walletAddress: string) => {
+  return new Contract(walletAddress, WALLET_ABI, provider);
+};
